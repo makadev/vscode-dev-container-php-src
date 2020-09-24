@@ -1,0 +1,28 @@
+{
+  "name": "PHP Dev",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "args": {
+      "SYSTEM": "debian",
+      "VARIANT": "buster",
+      "USERNAME": "php-tester",
+      "USER_UID": "1000",
+      "USER_GID": "1000",
+    }
+  },
+  "runArgs": ["--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined"],
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+  "extensions": [
+    // install c / c++ support
+    "ms-vscode.cpptools",
+    // autoconf HL support
+    // "maelvalais.autoconf",
+    // AWK HL support
+    // "luggage66.awk",
+  ],
+  "remoteUser": "php-tester",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=delegated",
+  "workspaceFolder": "/workspace"
+}

@@ -1,0 +1,27 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Update Sources from Github and build PHP",
+            "type": "shell",
+            "command": " ${workspaceFolder}/scripts/build.sh",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Update Sources from Github and build PHP and run tests",
+            "type": "shell",
+            "command": " ${workspaceFolder}/scripts/test.sh",
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+    ]
+}
