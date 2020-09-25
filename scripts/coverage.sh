@@ -11,17 +11,13 @@ fi
 cd ${PHP_SOURCE}
 
 ## create default configuration and enable gcov
-./buildconf
-./configure --enable-gcov
-
-## build
+./buildconf \
+&& ./configure --enable-gcov \
 /usr/bin/make "-j${NRJOBS}"
 
 ## run tests (generates coverage information)
 TEST_PHP_ARGS="-j${NRJOBS}"
 export TEST_PHP_ARGS
-/usr/bin/make test
-
-## rewrite coverage output
-/usr/bin/make lcov-clean
-/usr/bin/make lcov
+/usr/bin/make test \
+&& /usr/bin/make lcov-clean \
+&& /usr/bin/make lcov

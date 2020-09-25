@@ -12,6 +12,6 @@ cd ${PHP_SOURCE}
 
 ## create default configuration
 ./buildconf
-./configure
+&& ./configure \
+&& /usr/bin/make "-j${NRJOBS}"
 
-/usr/bin/make "-j${NRJOBS}"
