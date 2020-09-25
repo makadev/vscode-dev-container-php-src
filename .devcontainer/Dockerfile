@@ -39,6 +39,14 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 ## install optional dev dependencies
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends \
+    ## [OPTIONAL] ext/mbstring support for mb regex via oniguruma
+    libonig-dev \
+    ## [OPTIONAL] kerberos support for ext/imap and maybe others
+    libkrb5-dev \
+    ## [OPTIONAL] ext/session mm support
+    libmm-dev \
+    ## [OPTIONAL] argon pw support for ext/standard, ext/sodium
+    libargon2-dev \
     ## [OPTIONAL] ext/xsl
     libxslt-dev \
     ## [OPTIONAL] ext/tidy
