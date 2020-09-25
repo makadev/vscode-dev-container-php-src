@@ -17,6 +17,8 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     autoconf \
     bison \
     re2c \
+    ## coverage output generator
+    lcov \
     ## should be installed with build-essentials, containing C standard headers and f.e. libiconv, libintl, ...
     # libc6-dev \
     ## file, needed/expected in configure script but preinstalled inside container
