@@ -12,6 +12,6 @@ cd ${PHP_SOURCE}
 
 ## create default configuration
 ./buildconf \
-&& ./configure ${CONFIGURE_PARAMS} \
+&& ./configure CC="$(which clang)" CXX="$(which clang++)" ${CONFIGURE_PARAMS} \
 && /usr/bin/make "-j${NRJOBS}"
 

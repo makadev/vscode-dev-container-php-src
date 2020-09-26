@@ -1,6 +1,7 @@
 #!/bin/bash
 
 ## these should not be changed
+USERNAME=php-tester
 WORKSPACE=/workspace
 PHP_SOURCE=${WORKSPACE}/php-src
 PHP_REPOSITORY=https://github.com/php/php-src.git
@@ -8,6 +9,8 @@ CONFIG_OVERRIDES_FILE=/workspace/scripts/config-overrides.sh
 
 ## typical overrideables
 PHP_FORKED_REPOSITORY=
+INSTALL_PREFIX=/usr/local
+CONFIGURE_PARAMS="--prefix=${INSTALL_PREFIX}"
 
 ##nr procs + 1 jobs (cores, HT might be ignored)
 EXPECTED_NR_PROCS=$(grep -c '^processor' /proc/cpuinfo)

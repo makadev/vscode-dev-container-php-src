@@ -12,7 +12,8 @@ cd ${PHP_SOURCE}
 
 ## create default configuration and enable gcov
 ./buildconf \
-&& ./configure --enable-gcov \
+&& ./configure ${CONFIGURE_PARAMS} \
+    --enable-gcov \
 /usr/bin/make "-j${NRJOBS}"
 
 ## run tests (generates coverage information)

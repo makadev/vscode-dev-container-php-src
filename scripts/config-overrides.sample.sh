@@ -1,22 +1,10 @@
 #!/bin/bash
 
-source /workspace/scripts/config.sh
-
-if [[ ! -d "${PHP_SOURCE}" ]]; then
-    ## clone if sources not installed
-    /workspace/scripts/fetch-source.sh
-fi
-
-## change working dir to src path
-cd ${PHP_SOURCE}
-
-## create default configuration
-./buildconf \
-&& ./configure \
+PHP_FORKED_REPOSITORY=
+CONFIGURE_PARAMS="--prefix=${INSTALL_PREFIX} \
     --with-openssl \
     --with-kerberos \
     --with-system-ciphers \
-    --with-external-pcre \
     --with-pcre-jit \
     --with-zlib \
     --enable-bcmath \
@@ -62,5 +50,4 @@ cd ${PHP_SOURCE}
     --with-tidy \
     --with-xsl \
     --with-zip \
-    --enable-mysqlnd \
-&& /usr/bin/make "-j${NRJOBS}"
+    --enable-mysqlnd"
