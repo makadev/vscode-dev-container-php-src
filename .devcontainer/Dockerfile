@@ -17,6 +17,12 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     autoconf \
     bison \
     re2c \
+    ## GNU Debugger
+    gdb \
+    ## Record and Replay
+    rr \
+    ## System call tracer
+    strace \
     ## coverage output generator
     lcov \
     ## should be installed with build-essentials, containing C standard headers and f.e. libiconv, libintl, ...
