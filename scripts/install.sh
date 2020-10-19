@@ -1,7 +1,8 @@
 #!/bin/bash
 
-source /workspace/scripts/config.sh
+THIS_PATH=${BASH_SOURCE%/*}
+source ${THIS_PATH}/config.sh
 
 cd ${PHP_SOURCE}
 
-sudo /usr/bin/make install
+sudo make install

@@ -1,6 +1,7 @@
 #!/bin/bash
 
-source /workspace/scripts/config.sh
+THIS_PATH=${BASH_SOURCE%/*}
+source ${THIS_PATH}/config.sh
 
 AUTOCRLF_STATE=$(git config --global core.autocrlf)
 

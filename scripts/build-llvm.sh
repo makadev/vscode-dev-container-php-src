@@ -1,10 +1,11 @@
 #!/bin/bash
 
-source /workspace/scripts/config.sh
+THIS_PATH=${BASH_SOURCE%/*}
+source ${THIS_PATH}/config.sh
 
 if [[ ! -d "${PHP_SOURCE}" ]]; then
     ## clone if sources not installed
-    /workspace/scripts/fetch-source.sh
+     ${THIS_PATH}/fetch-source.sh
 fi
 
 ## change working dir to src path
@@ -13,5 +14,5 @@ cd ${PHP_SOURCE}
 ## create default configuration
 ./buildconf \
 && ./configure CC="$(which clang)" CXX="$(which clang++)" ${CONFIGURE_PARAMS} \
-&& /usr/bin/make "-j${NRJOBS}"
+&& make "-j${NRJOBS}"
 

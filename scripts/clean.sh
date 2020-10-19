@@ -1,6 +1,7 @@
 #!/bin/bash
 
-source /workspace/scripts/config.sh
+THIS_PATH=${BASH_SOURCE%/*}
+source ${THIS_PATH}/config.sh
 
 ## ask for cleaning (no dryrun) of the source path
 function cleanForReal {
@@ -47,6 +48,6 @@ function cleanDryRun {
 if [[ -d ${PHP_SOURCE} ]]; then
     ## run clean and try to remove all files that don't belong into the source tree
     cd ${PHP_SOURCE}
-    /usr/bin/make clean
+    make clean
     cleanDryRun
 fi

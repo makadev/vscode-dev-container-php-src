@@ -2,10 +2,10 @@
 
 ## these should not be changed
 USERNAME=php-tester
-WORKSPACE=/workspace
+WORKSPACE=${BASH_SOURCE%/*}/..
 PHP_SOURCE=${WORKSPACE}/php-src
 PHP_REPOSITORY=https://github.com/php/php-src.git
-CONFIG_OVERRIDES_FILE=/workspace/scripts/config-overrides.sh
+CONFIG_OVERRIDES_FILE=${WORKSPACE}/scripts/config-overrides.sh
 
 ## typical overrideables
 PHP_FORKED_REPOSITORY=

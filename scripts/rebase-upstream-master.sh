@@ -1,6 +1,7 @@
 #!/bin/bash
 
-source /workspace/scripts/config.sh
+THIS_PATH=${BASH_SOURCE%/*}
+source ${THIS_PATH}/config.sh
 
 if [[ -d "${PHP_SOURCE}" ]]; then
     if [[ ! -z "${PHP_FORKED_REPOSITORY}" ]]; then
