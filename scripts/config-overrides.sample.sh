@@ -1,7 +1,7 @@
 #!/bin/bash
 
 PHP_FORKED_REPOSITORY=
-CONFIGURE_PARAMS="--prefix=${INSTALL_PREFIX} \
+CONFIGURE_PARAMS="${CONFIGURE_PARAMS} \
     --with-openssl \
     --with-kerberos \
     --with-system-ciphers \
